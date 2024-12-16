@@ -42,6 +42,10 @@ impl<Element: Num + Ord + Copy + NumCast + Neg<Output = Element>, BinaryOperator
       binary_operator,
     }
   }
+
+  pub fn elements<'a>(&'a self) -> &'a Range<Element> {
+    &self.set
+  }
 }
 
 #[cfg(test)]
@@ -57,5 +61,9 @@ mod tests {
         assert_eq!(group.bin_op(1, 2), 3);
         assert!(group.associative(1, 2, 3));
         assert!(group.commutative(1, 2));
+        group.elements().clone().for_each(|i| {
+          assert_eq!(group.inverse(i), -i);
+          assert_eq!(group.bin_op(i, group.inverse(i)), group.identity());
+        });
     }
 }
