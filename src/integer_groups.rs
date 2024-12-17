@@ -46,6 +46,10 @@ impl<Element: Num + Ord + Copy + NumCast + Neg<Output = Element>, BinaryOperator
   pub fn elements<'a>(&'a self) -> &'a Range<Element> {
     &self.set
   }
+
+  pub fn order(&self) -> usize {
+    self.set.end.sub(self.set.start).to_usize().unwrap()
+  }
 }
 
 #[cfg(test)]

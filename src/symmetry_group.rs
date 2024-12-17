@@ -56,4 +56,8 @@ impl<BinaryOperator> SymmetryGroup<BinaryOperator> {
   pub fn elements<'a>(&'a self) -> &'a Vec<S3> {
     &self.set
   }
+
+  pub fn order(&self) -> usize {
+    self.set.len()
+  }
 }
