@@ -19,7 +19,7 @@ pub struct SymmetryGroup<BinaryOperator> {
 impl<BinaryOperator> GroupTraits for SymmetryGroup<BinaryOperator> {
   type T = S3;
 
-  fn bin_op(&self, a: S3, b: S3) -> S3 {
+  fn bin_op(&self, _a: S3, _b: S3) -> S3 {
     todo!("Implement bin_op for S3");
   }
 

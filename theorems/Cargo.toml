@@ -1,0 +1,13 @@
+[package]
+name = "theorems"
+version = "0.1.0"
+authors = ["AdityaK"]
+edition = "2018"
+
+[dependencies]
+num="0.2.0"
+
+[lib]
+name = "theorems"
+path = "lib.rs"
+crate-type = ["lib"]
